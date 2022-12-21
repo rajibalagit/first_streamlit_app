@@ -34,7 +34,7 @@ except URLError as e:
     streamlit.error()
 #stop here
 streamlit.header("The fruit load list contains")
-streamlit.stop()
+#streamlit.stop()
 
 #my_cur = my_cnx.cursor() a
 my_cur.execute("SELECT * from fruit_load_list")
