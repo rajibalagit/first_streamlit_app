@@ -33,7 +33,7 @@ try:
 except URLError as e:
     streamlit.error()
 #stop here
-streamlit.header("The fruit load list contains")
+streamlit.header("View our fruit list - Add your Favourites")
 #streamlit.stop()
 
 #my_cur = my_cnx.cursor() 
@@ -45,7 +45,7 @@ def get_fruit_load_list():
    with  my_cnx.cursor() as my_cur:
        my_cur.execute("select * from fruit_load_list")
        return my_cur.fetchall()
-if streamlit.button('get_fruit_load_list'):
+if streamlit.button('Get_fruit_list'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows=get_fruit_load_list()
     my_cnx.close()
